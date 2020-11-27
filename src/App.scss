@@ -1,6 +1,16 @@
+$breakpoint-mobile: 320px;
+
 .app-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  max-width: 1024px;
-  min-width: 320px;
+  height: auto;
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .app-container {
+    justify-content: unset;
+  }
 }

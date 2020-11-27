@@ -1,0 +1,25 @@
+$breakpoint-mobile: 320px;
+
+input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 400px;
+  max-width: 650px;
+  height: auto;
+  min-height: 50px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #46529d;
+  border: 1px solid rgba(225, 225, 225, .5);
+}
+
+@media (max-width: $breakpoint-mobile) {
+  input {
+    width: 280px;
+    min-width: unset;
+    padding: 0;
+  }
+}

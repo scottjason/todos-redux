@@ -1,13 +1,26 @@
+import './Todo.scss';
+import InputField from './shared/InputField';
+
+export const onInputChange = (inputName, inputValue) => {
+  console.log('onInputChange Todo', inputName, inputValue);
+};
+
 const Todo = props => {
-  const { todo, editTodo } = props;
-  console.log("Todo", props)
+  const { todo } = props;
+  const label = {
+    text: 'add to do',
+    htmlFor: 'content',
+  };
   return (
-  <li
-    className={todo.isComplete ? 'completed' : ''}
-    onClick={() => editTodo(todo)}
-  >
-    {todo.text}
-  </li>
+    <InputField
+      label={label}
+      className='add-todo'
+      inputType='text'
+      inputName='addTodo'
+      value={todo.text}
+      isReadOnly={todo.isReadOnly}
+      onInputChange={onInputChange}
+    />
   );
 };
 
