@@ -1,4 +1,4 @@
-$breakpoint-mobile: 320px;
+$breakpoint-mobile: 468px;
 
 input {
   position: relative;
@@ -12,13 +12,15 @@ input {
   min-height: 50px;
   padding: 1rem;
   margin-bottom: 0.5rem;
+  color: white;
+  font-size: 1rem;
   background-color: #46529d;
   border: 1px solid rgba(225, 225, 225, .5);
 }
 
 @media (max-width: $breakpoint-mobile) {
   input {
-    width: 280px;
+    max-width: 90%;
     min-width: unset;
     padding: 0;
   }

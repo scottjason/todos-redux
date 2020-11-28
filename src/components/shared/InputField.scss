@@ -1,4 +1,4 @@
-$breakpoint-mobile: 320px;
+$breakpoint-mobile: 468px;
 
 .default-input {
   position: relative;
@@ -18,9 +18,8 @@ $breakpoint-mobile: 320px;
 
 @media (max-width: $breakpoint-mobile) {
   .default-input {
-    width: 280px;
+    max-width: 90%;
     min-width: unset;
-    padding: 0;
   }
 }
 

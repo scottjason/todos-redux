@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTodo renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <label
+    className="visually-hidden"
+    htmlFor="add-to-do"
+  >
+    add to do
+  </label>
+  <input
+    autoComplete="off"
+    className="add-todo"
+    id="add-to-do"
+    name="addTodo"
+    onChange={[Function]}
+    readOnly={false}
+    type="text"
+    value=""
+  />
+</form>
+`;

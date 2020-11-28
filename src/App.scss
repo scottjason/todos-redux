@@ -1,10 +1,12 @@
-$breakpoint-mobile: 320px;
+$breakpoint-mobile: 468px;
 
 .app-container {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
   width: 100%;
   height: auto;
 }

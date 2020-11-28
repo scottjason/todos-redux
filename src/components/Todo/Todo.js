@@ -1,5 +1,6 @@
+import React from 'react';
+import InputField from '../shared/InputField';
 import './Todo.scss';
-import InputField from './shared/InputField';
 
 export const onInputChange = (inputName, inputValue) => {
   console.log('onInputChange Todo', inputName, inputValue);
@@ -8,8 +9,8 @@ export const onInputChange = (inputName, inputValue) => {
 const Todo = props => {
   const { todo } = props;
   const label = {
-    text: 'add to do',
-    htmlFor: 'content',
+    text: 'todo',
+    htmlFor: todo._id,
   };
   return (
     <InputField

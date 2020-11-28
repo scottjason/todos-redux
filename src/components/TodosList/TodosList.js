@@ -1,14 +1,14 @@
+import React from 'react';
 import { connect } from 'react-redux';
-import Todo from './Todo';
-import AddTodo from './AddTodo';
-import { editTodo } from '../redux/actions';
+import Todo from '../Todo/Todo';
+import AddTodo from '../AddTodo/AddTodo';
+import { editTodo } from '../../redux/actions';
 import './TodoList.scss';
 
 const TodosList = props => {
-  console.log(props)
   return (
     <main>
-    <AddTodo />
+      <AddTodo />
       {props.todos.map(todo => {
         return <Todo key={todo._id} editTodo={props.editTodo} todo={todo} />;
       })}

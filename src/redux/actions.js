@@ -1,9 +1,9 @@
 import { ADD_TODO, EDIT_TODO } from './actionTypes';
 
-export const addTodo = todo => ({
+export const addTodo = text => ({
   type: ADD_TODO,
   payload: {
-    todo,
+    text,
   },
 });
 
