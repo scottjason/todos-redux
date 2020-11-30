@@ -12,7 +12,7 @@ const mockStore = configureStore(middleware);
 const store = mockStore(initialState);
 
 describe('AddTodo', () => {
-  
+ 
   it('renders correctly', () => {
     const tree = renderer
       .create(

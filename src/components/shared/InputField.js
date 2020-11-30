@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './InputField.scss';
 
 const labelClass = 'visually-hidden';
 
-const InputField = props => {
+const InputField = forwardRef((props, ref) => {
   let {
+    value,
     label,
-    className,
+    onBlur,
+    onFocus,
+    onChange,
+    onKeyPress,
     inputType,
     inputName,
-    onInputChange,
-    value,
+    className,
     isReadOnly,
+    defaultValue,
   } = props;
-  className = className ? className : 'default-input';
   const { htmlFor, text } = label;
   return (
     <>
@@ -21,17 +24,22 @@ const InputField = props => {
         {text}
       </label>
       <input
+        ref={ref}
         id={htmlFor}
-        autoComplete={'off'}
+        value={value}
+        defaultValue={defaultValue}
         type={inputType}
         name={inputName}
-        value={value}
-        className={className}
+        autoComplete={'off'}
         readOnly={isReadOnly}
-        onChange={e => onInputChange(e.target.value)}
+        className={className || 'default-input'}
+        onBlur={onBlur && onBlur}
+        onFocus={onFocus && onFocus}
+        onKeyPress={onKeyPress && onKeyPress}
+        onChange={() => onChange(ref.current.value)}
       />
     </>
   );
-};
+});
 
 export default InputField;

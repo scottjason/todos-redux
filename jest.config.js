@@ -4,9 +4,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/public/**',
     '!**/src/reportWebVitals.js',
-    '!**/src/setupTests.js',
   ],
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
   moduleNameMapper: {
     '\\.(css|scss|less)$': 'identity-obj-proxy',
   },

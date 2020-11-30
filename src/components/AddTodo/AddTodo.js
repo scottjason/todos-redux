@@ -1,34 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../../redux/actions';
 import InputField from '../shared/InputField';
+import './AddTodo.scss';
 
 const AddTodo = props => {
   const [text, setText] = useState('');
-  
+  const defaultInputValue = 'add a todo...';
+  const ref = createRef();
+
   const label = {
     text: 'add to do',
     htmlFor: 'add-to-do',
   };
-
-  const onInputChange = inputValue => setText(inputValue);
+  
+  const onChange = inputValue => setText(inputValue);
+  
+  const onFocus = () => {
+    if (!text || text === defaultInputValue) {
+      setText('');
+    }
+  };
+  
+  const onBlur = () => {
+    if (!text) setText(defaultInputValue);
+  };
 
   const onSubmit = e => {
     e && e.preventDefault();
     props.addTodo(text);
-    setText('');
+    setText(defaultInputValue);
+    ref.current.blur();
   };
+
+  useEffect(() => {
+    setText(defaultInputValue);
+  }, []);
 
   return (
     <form onSubmit={onSubmit}>
       <InputField
-        label={label}
-        className='add-todo'
-        inputType='text'
-        inputName='addTodo'
+        ref={ref}
         value={text}
+        label={label}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        inputType='text'
+        className='add-todo'
+        inputName='addTodo'
         isReadOnly={false}
-        onInputChange={onInputChange}
+        onChange={onChange}
       />
     </form>
   );

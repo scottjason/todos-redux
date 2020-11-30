@@ -1,4 +1,15 @@
-$breakpoint-mobile: 468px;
+$breakpoint-mobile-sm: 300px;
+$breakpoint-mobile-md: 468px;
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem auto;
+  width: 100%;
+  min-width: 400px;
+  max-width: 650px;
+}
 
 input {
   position: relative;
@@ -14,14 +25,45 @@ input {
   margin-bottom: 0.5rem;
   color: white;
   font-size: 1rem;
-  background-color: #46529d;
-  border: 1px solid rgba(225, 225, 225, .5);
+  background-color: #20AC90;
+  border: 1px solid rgba(225, 225, 225, 0.5);
 }
 
-@media (max-width: $breakpoint-mobile) {
-  input {
-    max-width: 90%;
+@media (max-width: $breakpoint-mobile-md) {
+  input,
+  section {
+    max-width: 400px;
     min-width: unset;
     padding: 0;
   }
+}
+
+@media (max-width: $breakpoint-mobile-sm) {
+  input,
+  section {
+    max-width: 280px;
+    min-width: unset;
+    padding: 0;
+  }
+}
+
+.opts {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit-todo, .delete-todo, .mark-complete {
+  position: relative;
+  font-size: 0.75rem;
+  top: -1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mark-complete {
+  position: absolute;
+  margin-left: 0;
+  right: 3rem;
 }
